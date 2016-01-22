@@ -30,27 +30,27 @@ input.search-box {
   color: #FFF;
 }
 
-ul.ms-spinner {
+ul.tek-spinner {
   margin: 0;
   padding: 20px 0px;
   white-space: nowrap;
   overflow: auto;
   list-style-type: none;
 }
-ul.ms-spinner li {
+ul.tek-spinner li {
   margin: 0;
   margin-right: 4px;
   padding: 0;
   display: inline-block;
 }
 
-img.ms-movie {
+img.tek-movie {
   height: 135px;
   width: 235px;
   cursor: pointer;
   transition: all .2s ease-out;
 }
-img.ms-movie:hover {
+img.tek-movie:hover {
   transition: all .2s ease-in 0.3s;
   transform: scale(1.2);
 }
