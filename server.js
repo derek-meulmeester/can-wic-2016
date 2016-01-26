@@ -1,24 +1,30 @@
 var http = require('http');
 var fs = require('fs');
 var index = fs.readFileSync('index.html');
+var module = fs.readFileSync('module.html');
 var styles = fs.readFileSync('styles.css');
 
 http.createServer(function (req, res) {
 	switch(req.url) {
-		case '/index.html': {
-			res.writeHead(200, {'Content-Type': 'text/html'});
-  			res.end(index);
-  			break;
+		case '/data': {
+			res.writeHead(200, {'Content-Type': 'application/json'});
+			res.end(JSON.stringify(DATA));
+			break;
 		}
 		case '/styles.css': {
 			res.writeHead(200, {'Content-Type': 'text/css'});
   			res.end(styles);
   			break;
 		}
+		case '/module.html': {
+			res.writeHead(200, {'Content-Type': 'text/html'});
+  			res.end(module);
+  			break;
+		}
 		default: {
-			res.writeHead(200, {'Content-Type': 'application/json'});
-			res.end(JSON.stringify(DATA));
-			break;
+			res.writeHead(200, {'Content-Type': 'text/html'});
+  			res.end(index);
+  			break;
 		}
 	}
 }).listen(3000);
